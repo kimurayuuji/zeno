@@ -1,10 +1,44 @@
 snippets:
+  # git
   - name: git status
     keyword: gs
     snippet: git status
   - name: git commit
     keyword: gc
     snippet: git commit -m '{{commit_message}}'
+  # ls
+  - name: ls list
+    keyword: ll
+    snippet: ls -l
+  - name: ls all
+    keyword: la
+    snippet: ls -la
+  - name: ls tree
+    keyword: lt
+    snippet: ls -lT -L=4{{}}
+  - name: ls all tree
+    keyword: lat
+    snippet: ls -laT -L=4
+  # lazygit
+  - name: lazygit
+    keyword: lg
+    snippet: lazygit
+  # gemini
+  - name: gemini
+    keyword: g
+    snippet: cd ~/gemini{{}}; gemini
+  # zoxide
+  - name: zoxide query
+    keyword: Z
+    snippet: $(zoxide query -l | fzf --preview "eza "{}" -1 --icons=always --color=always")
+    context:
+      lbuffer ; '.+\s'
+  # fzf
+  - name: fzf
+    keyword: F
+    snippet: $(fzf --preview "bat --color=always --style=numbers "{}"")
+    context:
+      lbuffer ; '.+\s'
 completions:
   - name: nb edit
     patterns:
