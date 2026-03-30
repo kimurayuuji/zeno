@@ -1,0 +1,18 @@
+snippets:
+  - name: git status
+    keyword: gs
+    snippet: git status
+  - name: git commit
+    keyword: gc
+    snippet: git commit -m '{{commit_message}}'
+completions:
+  - name: nb edit
+    patterns:
+      - "^nb e( .*)? $"
+      - "^nb edit( .*)? $"
+    sourceCommand: "nb ls --no-color | grep -E '^\\[[0-9]+\\]'"
+    options:
+      --ansi: true  # ← ANSIカラー有効
+      --prompt: "'nb edit >'"
+      --preview: "echo {} | sed -E 's/^\\[([0-9]+)\\].*/\\1/' | xargs nb show"
+    callback: "sed -E 's/^\\[([0-9]+)\\].*/\\1/'"
