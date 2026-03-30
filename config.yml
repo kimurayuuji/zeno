@@ -39,6 +39,11 @@ snippets:
     snippet: $(fzf --preview "bat --color=always --style=numbers "{}"")
     context:
       lbuffer ; '.+\s'
+  - name: fzf directory
+    keyword: FD
+    snippet: $(fd --type d | fzf --preview "eza "{}" -1 --icons=always --color=always")
+    context:
+      lbuffer ; '.+\s'
 completions:
   - name: nb edit
     patterns:
@@ -50,3 +55,12 @@ completions:
       --prompt: "'nb edit >'"
       --preview: "echo {} | sed -E 's/^\\[([0-9]+)\\].*/\\1/' | xargs nb show"
     callback: "sed -E 's/^\\[([0-9]+)\\].*/\\1/'"
+  - name: nvim edit
+    patterns:
+      - "^nvim( .*)? $"
+    sourceCommand: "fd --hidden --exclude .git --max-depth 4"
+    options:
+      --ansi: true
+      --prompt: "'nvim > '"
+      --preview: "[ -d {} ] && eza --tree --level=2 --icons=always --color=always {} || bat --color=always --style=numbers --line-range :500 {}"
+    callback: "echo {}"
