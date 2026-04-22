@@ -23,6 +23,10 @@ snippets:
   - name: lazygit
     keyword: lg
     snippet: lazygit
+  # copilot
+  - name: copilot
+    keyword: c
+    snippet: cd ~/copilot{{}}; copilot
   # gemini
   - name: gemini
     keyword: g
