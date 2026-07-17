@@ -19,14 +19,22 @@ snippets:
   - name: ls all tree
     keyword: lat
     snippet: ls -laT -L=4
+  # lasydocker
+  - name: lazydocker
+    keyword: ld
+    snippet: lazydocker
+  # lazysql
+  - name: lazysql
+    keyword: lq
+    snippet: lazysql
   # lazygit
   - name: lazygit
     keyword: lg
     snippet: lazygit
-  # copilot
-  - name: copilot
+  # claude
+  - name: claude
     keyword: c
-    snippet: cd ~/copilot{{}}; copilot
+    snippet: cd ~/claude{{}}; claude
   # gemini
   - name: gemini
     keyword: g
@@ -48,6 +56,10 @@ snippets:
     snippet: $(fd --type d | fzf --preview "eza "{}" -1 --icons=always --color=always")
     context:
       lbuffer ; '.+\s'
+  # db
+  - name: db script
+    keyword: db
+    snippet: $(fd --type f --extension sh . ${HOME}/work/md-database/db | fzf --preview "bat --color=always --style=numbers {}")
 completions:
   - name: nb edit
     patterns:
