@@ -60,6 +60,10 @@ snippets:
   - name: db script
     keyword: db
     snippet: $(fd --type f --extension sh . ${HOME}/work/md-database/db | fzf --preview "bat --color=always --style=numbers {}")
+  # gh
+  - name: gh dash
+    keyword: gd
+    snippet: gh dash
 completions:
   - name: nb edit
     patterns:
