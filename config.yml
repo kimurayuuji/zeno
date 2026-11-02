@@ -35,6 +35,9 @@ snippets:
   - name: claude
     keyword: c
     snippet: cd ~/claude{{}}; claude
+  - name: claude sonnet 5
+    keyword: cl
+    snippet: claude --model claude-sonnet-5
   # gemini
   - name: gemini
     keyword: g
